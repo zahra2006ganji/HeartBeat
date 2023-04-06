@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #heart {
+    position: relative;
+    margin: 300px 45%;
+    animation: pump;
+    transform-origin: 50px 50px;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+#heart::before {
+   position: absolute;
+   content: "";
+   left: 70px; top: 0;
+   width: 70px;
+   height: 115px;
+   background: rgb(255, 42, 42);
+   border-radius: 50px 50px 0 0;
+   transform: rotate(-45deg);
+   transform-origin: 0 100%;
+   animation: color;
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
+}
+#heart::after {
+    position: absolute;
+    content: "";
+    width: 70px;
+    height: 115px;
+    background: rgb(255, 42, 42);
+    border-radius: 50px 50px 0 0;
+    left: 0;
+   transform: rotate(45deg);
+   transform-origin :100% 100%;
+   animation: color;
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
+}
+
+@keyframes pump {
+    50%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes color {
+    30%{
+        background-color: rgb(255, 0, 17);
+    }
+    60%{
+        background-color: rgb(255, 0, 191);
+    }
+    100%{
+        background: rgb(255, 42, 42);  
+    }
+}
+    </style>
+</head>
+<body>
+    <div id="heart"></div> 
+</body>
+</html>
